@@ -35,10 +35,10 @@ Ext.define('Ext.plugins.CSVImport', {
         return (arrData);
     },
 
-    addRow: function(row) {
-        row = csvToArray(row, strDelimiter);
-        grid.store.loadData(row, true);
-    },
+    // addRow: function(row) {
+//         row = csvToArray(row, strDelimiter);
+//         grid.store.loadData(row, true);
+//     },
 
     createStore: function(rows, keys) {
     	var me = this;
