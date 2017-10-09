@@ -7,6 +7,8 @@
 Ext.define('TriNet.Payroll.Global', {
     singleton: true,
     headerRows: 0,
+    strDelimiter : ",",
+    endLine :"\n",
     defaultColumns:  [
           {
              "name" : "EMPLID",

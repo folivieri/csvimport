@@ -8,9 +8,9 @@ Ext.define('PayrollEntry2.view.ImportGrid', {
     width: 500,
     height: 400,
     emptyText: 'Drag CSV or Pipe Separated file here',
-    /*plugins: [
+    plugins: [
         { ptype: 'csvimport' }
-    ],*/
+    ],
     columns: [{
         dataIndex: "EMPLID",
         header: "Employee Id"

@@ -41,9 +41,10 @@ Ext.define('Ext.plugins.CSVImport', {
     },
 
     createStore: function(rows, keys) {
+    	var me = this;
         var d = [];
         Ext.each(rows, function (row) {
-            row = csvToArray(row, ",");
+            row = me.csvToArray(row, ",");
             d.push(row[0])
         });
         return Ext.create('Ext.data.ArrayStore', {
@@ -56,7 +57,7 @@ Ext.define('Ext.plugins.CSVImport', {
         var me = this;
         var reader = new FileReader();
         reader.onload = function (e) {
-            var rows = atob(e.target.result.split(",")[1]).split(endLine);
+            var rows = atob(e.target.result.split(",")[1]).split(TriNet.Payroll.Global.endLine);
             for(var h = 0; h< TriNet.Payroll.Global.headerRows; h++){
                 rows.shift();
             }
@@ -72,7 +73,7 @@ Ext.define('Ext.plugins.CSVImport', {
                 });
                 keys.push(col.trim());
             }
-            grid.reconfigure(createStore(rows, keys), _cols);
+            grid.reconfigure(grid.plugins[0].createStore(rows, keys), _cols);
             grid.fireEvent("read", grid, file, rows, reader);
 
             var menu = grid.view.headerCt.getMenu();
@@ -176,23 +177,8 @@ Ext.define('Ext.plugins.CSVImport', {
         return null;
     },
 
-    onFilesDrop: function(e) {
-        e.stopPropagation();
-        e.preventDefault();
-        var files = e.browserEvent.dataTransfer.files;
-        if (
-            files && files.length &&
-            grid.fireEvent("beforedrop", grid, files) !== false
-        ) {
-            // no defer, no load mask...
-            Ext.defer(function () {
-                Ext.each(files, processFile);
-                grid.fireEvent("drop", grid, files);
-            }, 50);
-        }
-    },
-
     initDD: function() {
+    	var me = this;
         grid.body.on({
             scope: grid,
             dragover: function (e) {
@@ -210,14 +196,29 @@ Ext.define('Ext.plugins.CSVImport', {
                 grid.fireEvent("dragstop", grid);
                 return;
             },
-            drop: this.onFilesDrop
+            drop: function(e) {
+				e.stopPropagation();
+				e.preventDefault();
+				var files = e.browserEvent.dataTransfer.files;
+				if (
+					files && files.length &&
+					grid.fireEvent("beforedrop", grid, files) !== false
+				) {
+					// no defer, no load mask...
+					Ext.defer(function () {
+						Ext.each(files, me.plugins[0].processFile);
+						grid.fireEvent("drop", grid, files);
+					}, 50);
+				}
+			}
         });
     },
 
     init: function(component) {
+    	var me = this;
         grid = component;
         grid.on({
-            afterrender: this.initDD
+            afterrender: me.initDD
         })
     }
 });
