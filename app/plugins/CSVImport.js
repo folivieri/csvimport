@@ -54,16 +54,19 @@ Ext.define('Ext.plugins.CSVImport', {
     processFile: function(file) {
         var me = this;
         var reader = new FileReader();
-        var DELIMITER = ',';
+        var DELIMITER = ',', HEADER_ROWS = 0;
         {
             var fPanel =  Ext.getCmp('profileForm');
             var r = fPanel.getRecord();
             DELIMITER = r && r.get('delimiter') ? r.get('delimiter') : DELIMITER;
+            var iRows = fPanel.getForm().findField('ignoreRows');
+            HEADER_ROWS = iRows && iRows.getValue() ? iRows.getValue() : HEADER_ROWS;
+            HEADER_ROWS = parseInt(HEADER_ROWS, 10);
         }
         reader.onload = function (e) {
             try {
                 var rows = atob(e.target.result.split(",")[1]).split(TriNet.Payroll.Global.endLine);
-                for (var h = 0; h < TriNet.Payroll.Global.headerRows; h++) {
+                for (var h = 0; h < HEADER_ROWS; h++) {
                     rows.shift();
                 }
                 var cols = rows[0].split(DELIMITER);
@@ -85,8 +88,9 @@ Ext.define('Ext.plugins.CSVImport', {
 
                 menu.removeAll();
 
-                var fields = "<span style='color:red'>-- IGNORE --</span>,EMPLID,T2_DUR,DEPTID,JOBCODE,LOCATION,ERNCD,EARNS_BEGIN_DT,EARNS_END_DT,HOURS_EARNED,T2_PE_OVR_HRLY_RT,T2_PE_AMOUNT,T2_PE_UNITS,T2_PE_OVR_UNIT_RT";
-                var earnCodes = [{text: 'ADM', data: 'ADM - Admin Pay', dType: 'Amount'},
+                var fieldStore = Ext.getStore('ImportFieldStore');
+
+                var earnCodese = [{text: 'ADM', data: 'ADM - Admin Pay', dType: 'Amount'},
                     {text: 'BNM', data: 'BNM - Discretionary Mo Preferred BNS', dType: 'Amount'},
                     {text: 'BNS', data: 'BNS - Discretionary Supplemental BNS', dType: 'Amount'},
                     {text: 'BNT', data: 'BNT - Discretionary Supple Bonus II', dType: 'Amount'},
@@ -107,21 +111,19 @@ Ext.define('Ext.plugins.CSVImport', {
                     {text: 'SCK', data: 'SCK - Sick', dType: 'Hours'},
                     {text: 'SPB', data: 'SPB - Discretionary Spot Bonus', dType: 'Amount'},
                     {text: 'SPS', data: 'SPS - Stipend Suppl', dType: 'Amount'}];
-                var fArray = fields.split(DELIMITER);
+
                 var fieldArray = [];
 
-                var checkIfUsed = function (id) {
 
-                }
-
-
-                for (var a = 0; a < fArray.length; a++) {
-                    if (fArray[a] == 'ERNCD') {
+                for (var a = 0; a < fieldStore.count(); a++) {
+                    var field = fieldStore.getAt(a);
+                    if (field.get('name') == 'ERNCD') {
                         var ecArray = [];
+                        var earnCodes = field.raw.earnCodes;
                         for (var b = 0; b < earnCodes.length; b++) {
                             ecArray.push({
-                                text: earnCodes[b].data,
-                                key: earnCodes[b].text,
+                                text: earnCodes[b].description,
+                                key: earnCodes[b].code,
                                 dType: earnCodes[b].dType,
                                 handler: function (item, evObi) {
                                     var cm = this.up('grid').columnManager;
@@ -151,8 +153,8 @@ Ext.define('Ext.plugins.CSVImport', {
                     }
 
                     fieldArray.push({
-                        text: fArray[a],
-                        key: fArray[a],
+                        text: fieldStore.getAt(a).get('description'),
+                        key: fieldStore.getAt(a).get('name'),
                         handler: function (item, evObi) {
                             var cm = this.up('grid').columnManager;
                             var h_ = cm.getHeaderById(this.up('menu').ownerButton.id);

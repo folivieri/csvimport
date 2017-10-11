@@ -849,10 +849,13 @@ Ext.ClassManager.addNameAlternateMappings({
   "PayrollEntry2.Application": [],
   "PayrollEntry2.controller.Main": [],
   "PayrollEntry2.model.Delimiter": [],
+  "PayrollEntry2.model.ImportFieldEarnCodesModel": [],
+  "PayrollEntry2.model.ImportFieldModel": [],
   "PayrollEntry2.model.Profile": [],
   "PayrollEntry2.model.ProfileFieldModel": [],
   "PayrollEntry2.model.ProfileModel": [],
   "PayrollEntry2.store.Delimiter": [],
+  "PayrollEntry2.store.ImportFieldStore": [],
   "PayrollEntry2.store.ProfileFieldStore": [],
   "PayrollEntry2.store.ProfileStore": [],
   "PayrollEntry2.view.ImportFormPanel": [],
@@ -1867,12 +1870,15 @@ Ext.ClassManager.addNameAliasMappings({
   "PayrollEntry2.Application": [],
   "PayrollEntry2.controller.Main": [],
   "PayrollEntry2.model.Delimiter": [],
+  "PayrollEntry2.model.ImportFieldEarnCodesModel": [],
+  "PayrollEntry2.model.ImportFieldModel": [],
   "PayrollEntry2.model.Profile": [],
   "PayrollEntry2.model.ProfileFieldModel": [],
   "PayrollEntry2.model.ProfileModel": [],
   "PayrollEntry2.store.Delimiter": [
     "store.payrollEntry-delimiter"
   ],
+  "PayrollEntry2.store.ImportFieldStore": [],
   "PayrollEntry2.store.ProfileFieldStore": [
     "store.payrollEntry-profileField"
   ],
