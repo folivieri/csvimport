@@ -15,6 +15,7 @@ Ext.define('PayrollEntry2.Application', {
         'ProfileStore',
         'Delimiter',
         'ProfileFieldStore',
-        'ImportFieldStore'
+        'ImportFieldStore',
+        'BlankImportGridStore'
     ]
 });

@@ -854,6 +854,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "PayrollEntry2.model.Profile": [],
   "PayrollEntry2.model.ProfileFieldModel": [],
   "PayrollEntry2.model.ProfileModel": [],
+  "PayrollEntry2.store.BlankImportGridStore": [],
   "PayrollEntry2.store.Delimiter": [],
   "PayrollEntry2.store.ImportFieldStore": [],
   "PayrollEntry2.store.ProfileFieldStore": [],
@@ -1875,6 +1876,7 @@ Ext.ClassManager.addNameAliasMappings({
   "PayrollEntry2.model.Profile": [],
   "PayrollEntry2.model.ProfileFieldModel": [],
   "PayrollEntry2.model.ProfileModel": [],
+  "PayrollEntry2.store.BlankImportGridStore": [],
   "PayrollEntry2.store.Delimiter": [
     "store.payrollEntry-delimiter"
   ],

@@ -90,30 +90,7 @@ Ext.define('Ext.plugins.CSVImport', {
 
                 var fieldStore = Ext.getStore('ImportFieldStore');
 
-                var earnCodese = [{text: 'ADM', data: 'ADM - Admin Pay', dType: 'Amount'},
-                    {text: 'BNM', data: 'BNM - Discretionary Mo Preferred BNS', dType: 'Amount'},
-                    {text: 'BNS', data: 'BNS - Discretionary Supplemental BNS', dType: 'Amount'},
-                    {text: 'BNT', data: 'BNT - Discretionary Supple Bonus II', dType: 'Amount'},
-                    {text: 'BON', data: 'BON - Discretionary Acm Bonus', dType: 'Amount'},
-                    {text: 'BP', data: 'BP - Nondiscretionary Perform Bonus', dType: 'Amount'},
-                    {text: 'BRV', data: 'BRV - Bereavement', dType: 'Hours'},
-                    {text: 'FHO', data: 'FHO - Unrestricted Floating Holiday', dType: 'Hours'},
-                    {text: 'HOL', data: 'HOL - Holiday', dType: 'Hours'},
-                    {text: 'JD', data: 'JD - Jury Duty', dType: 'Hours'},
-                    {text: 'LP', data: 'LP - Leave with Pay', dType: 'Hours'},
-                    {text: 'LWP', data: 'LWP - Leave Without Pay', dType: 'Hours'},
-                    {text: 'OR', data: 'OR - Other Supp Rate', dType: 'Amount'},
-                    {text: 'OVT', data: 'OVT - Overtime', dType: 'Hours'},
-                    {text: 'PDR', data: 'PDR - Pay Differential Regular Time', dType: 'Amount'},
-                    {text: 'PER', data: 'PER - Personal Time', dType: 'Hours'},
-                    {text: 'PTO', data: 'PTO - PTO', dType: 'Hours'},
-                    {text: 'REG', data: 'REG - Regular', dType: 'Hours'},
-                    {text: 'SCK', data: 'SCK - Sick', dType: 'Hours'},
-                    {text: 'SPB', data: 'SPB - Discretionary Spot Bonus', dType: 'Amount'},
-                    {text: 'SPS', data: 'SPS - Stipend Suppl', dType: 'Amount'}];
-
                 var fieldArray = [];
-
 
                 for (var a = 0; a < fieldStore.count(); a++) {
                     var field = fieldStore.getAt(a);

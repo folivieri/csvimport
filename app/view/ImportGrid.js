@@ -11,46 +11,8 @@ Ext.define('PayrollEntry2.view.ImportGrid', {
     plugins: [
         { ptype: 'csvimport' }
     ],
-    columns: [{
-        dataIndex: "EMPLID",
-        header: "Employee Id"
-    }, {
-        dataIndex: "T2_DUR",
-        header: "Date Under Report"
-    }, {
-        dataIndex: "DEPTID",
-        header: "Department"
-    }, {
-        dataIndex: "JOBCODE",
-        header: "Job Code"
-    }, {
-        dataIndex: "LOCATION",
-        header: "Location"
-    }, {
-        dataIndex: "ERNCD",
-        header: "Earn Code"
-    }, {
-        dataIndex: "EARNS_BEGIN_DT",
-        header: "Earnings Begin Date"
-    }, {
-        dataIndex: "EARNS_END_DT",
-        header: "Earnings End Date"
-    }, {
-        dataIndex: "HOURS_EARNED",
-        header: "Hours"
-    }, {
-        dataIndex: "T2_PE_OVR_HRLY_RT",
-        header: "Override Hourly Rate"
-    }, {
-        dataIndex: "T2_PE_AMOUNT",
-        header: "Amount"
-    }, {
-        dataIndex: "T2_PE_UNITS",
-        header: "Units"
-    }, {
-        dataIndex: "T2_PE_OVR_UNIT_RT",
-        header: "Override Unit Rate"
-    }],
+    store: 'BlankImportGridStore',
+    columns: [],
     listeners: {
         dragstart: function(grid) {
             //grid.view.scroller.setStyle("background-color", "#FFFDF6");

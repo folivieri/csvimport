@@ -16,8 +16,16 @@ Ext.define('PayrollEntry2.view.ImportFormPanel', {
     enableImportButton : function (enable) {
             Ext.getCmp('save_profile_button').setDisabled(enable == 'ok');
             //Ext.getCmp('profileForm').setDisabled(enable=='ok');
+
             Ext.getCmp('import_button').setDisabled(!(enable == 'ok'));
             
+    },
+
+
+    listeners: {
+        dirtychange: function (f, isDirty) {
+            alert('dirtychange');
+        }
     },
 
     items: [{
@@ -26,16 +34,15 @@ Ext.define('PayrollEntry2.view.ImportFormPanel', {
         id: 'profileNameField',
         fieldLabel: 'Profile Name',
         name: "profileSelector",
-        emptyText: 'select Profile',
+        emptyText: 'New Profile',
         displayField: 'profileName',
         valueField: 'profileName',
-        //labelWidth: 330,
         store: 'ProfileStore',
-        typeAhead: true,
+        value: 'Default',
         listeners: {
             select: function(cBox, newValue, oldValue, eOpts) {
                 var fPanel =  this.up('form');
-                var r = cBox.getSelectedRecord()
+                var r = cBox.getSelectedRecord();
                 fPanel.loadRecord(r);
                 var _cols = [];
                 for (var i = 0; i < r.raw.profileFields.length; i++) {
@@ -48,7 +55,16 @@ Ext.define('PayrollEntry2.view.ImportFormPanel', {
 				var importGrid = Ext.getCmp('importGrid');
                 importGrid.reconfigure(null, _cols);
             },
-            change: function(cBox, newValue, oldValue, eOpts) {}
+            change: function(cBox, newValue, oldValue, eOpts) {
+                var r = cBox.getSelectedRecord();
+                if(r.raw && r.raw.enabled == "false"){
+                    var fPanel =  this.up('form');
+                    Ext.each(fPanel.items.items, function (_i) {
+                        _i.setDisabled(true);
+                    });
+                }
+                cBox.setDisabled(false);
+            }
         }
     }, {
         xtype: 'radiogroup',
@@ -141,6 +157,7 @@ Ext.define('PayrollEntry2.view.ImportFormPanel', {
                 fPanel.getForm().reset();
                 Ext.getStore('ProfileStore').add({
                     profileName: 'New Profile',
+                    enabled : "true",
                     profileId: "",
                     company: "7NU",
                     ignoreRows: "1",
@@ -157,6 +174,11 @@ Ext.define('PayrollEntry2.view.ImportFormPanel', {
 
                 }); //first row
                 var profileNameCombo = Ext.getCmp('profileNameField');
+
+                var fPanel =  this.up('form');
+                Ext.each(fPanel.items.items, function (_i) {
+                    _i.setDisabled(false)
+                });
                 profileNameCombo.select('New Profile');
                 var r = profileNameCombo.getSelectedRecord()
                 fPanel.loadRecord(r);
@@ -180,13 +202,15 @@ Ext.define('PayrollEntry2.view.ImportFormPanel', {
                 var fPanel =  this.up('form');
                 fPanel.getForm().isValid();
 
+                var importGrid = Ext.getCmp('importGrid');
+
                 Ext.MessageBox.show({
                     title: 'JSON',
                     height: 300,
                     width: 500,
                     defaultTextHeight: 200,
                     multiline: true,
-                    value: JSON.stringify(TriNet.Payroll.Global.profileJson, undefined, 2),
+                    value: JSON.stringify(importGrid.columnManager.columns, undefined, 2),
                     buttons: Ext.MessageBox.OKCANCEL,
                     animateTarget: 'mb3',
                     layout: 'vbox',

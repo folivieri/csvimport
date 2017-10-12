@@ -1,10 +1,11 @@
 [
-    {
+   {
        "profileId" : "",
        "company" : "7NU",
        "ignoreRows" : "1",
        "lastRow" : "10",
        "profileName" : "Default",
+       "enabled" : "false",
        "effDate" : "",
        "effStatus" : "A",
        "headerDetail" : "N",
@@ -104,8 +105,9 @@
     {
        "profileId" : "",
        "company" : "7NU",
-       "ignoreRows" : "0",
+       "ignoreRows" : "1",
        "profileName" : "Profile 1",
+       "enabled" : "false",
        "effDate" : "",
        "effStatus" : "A",
        "headerDetail" : "N",
@@ -157,6 +159,7 @@
        "ignoreRows" : "2",
        "lastRow" : "20",
        "profileName" : "Profile 2",
+       "enabled" : "false",
        "effDate" : "",
        "effStatus" : "A",
        "headerDetail" : "Y",
@@ -224,6 +227,7 @@
        "ignoreRows" : "3",
        "lastRow" : "20",
        "profileName" : "Profile 3",
+       "enabled" : "false",
        "effDate" : "",
        "effStatus" : "A",
        "headerDetail" : "Y",

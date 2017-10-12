@@ -11,5 +11,5 @@ Ext.define('PayrollEntry2.store.ImportFieldStore', {
     proxy : {
         type : 'ajax',
         url  : 'Data/importFields.json'
-    },
+    }
 });

@@ -8,6 +8,7 @@
     
     "resources": [
 		"Data/profiles.json",
-        "Data/importFields.json"
+        "Data/importFields.json",
+        "Data/blankGrid.json"
 	]
 }
