@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0fa4d19-9bac-4cc1-bbbe-1787497df1c5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/store/BlankImportGridStore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/blankGrid.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Application.js" afterPath="$PROJECT_DIR$/app/Application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/plugins/CSVImport.js" afterPath="$PROJECT_DIR$/app/plugins/CSVImport.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/store/ImportFieldStore.js" afterPath="$PROJECT_DIR$/app/store/ImportFieldStore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/ImportFormPanel.js" afterPath="$PROJECT_DIR$/app/view/ImportFormPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/ImportGrid.js" afterPath="$PROJECT_DIR$/app/view/ImportGrid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap.js" afterPath="$PROJECT_DIR$/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/example/bootstrap.js" afterPath="$PROJECT_DIR$/sass/example/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/profiles.json" afterPath="$PROJECT_DIR$/Data/profiles.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PayrollEntry2.iws" />
@@ -76,11 +65,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profiles.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profiles.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Data/profiles.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45166403">
+            <state vertical-scroll-proportion="-5.5882354">
               <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,16 +103,6 @@
               <folding>
                 <marker date="1507760853000" expanded="true" signature="2649:2658" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -564,7 +553,7 @@
       <created>1507583644456</created>
       <option name="number" value="Default" />
       <updated>1507583644456</updated>
-      <workItem from="1507583646153" duration="28311000" />
+      <workItem from="1507583646153" duration="28348000" />
     </task>
     <task id="LOCAL-00001" summary="Fix fields from Store">
       <created>1507684802165</created>
@@ -572,11 +561,17 @@
       <option name="project" value="LOCAL" />
       <updated>1507684802165</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added stores for static values&#10;">
+      <created>1507848242542</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1507848242542</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28311000" />
+    <option name="totallyTimeSpent" value="28348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1438" y="-816" width="1920" height="1177" extended-state="6" />
@@ -588,7 +583,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5021299" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295562" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295562" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2917847" sideWeight="0.4978701" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -620,7 +615,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Fix fields from Store" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix fields from Store" />
+    <MESSAGE value="Added stores for static values&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added stores for static values&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -837,8 +833,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/profiles.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45166403">
+        <state vertical-scroll-proportion="-5.5882354">
           <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
